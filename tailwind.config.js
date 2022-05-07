@@ -1,9 +1,16 @@
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}"
+    "./src/App.js",
+    "./src/components/About/index.js",
+    "./src/components/Contact/index.js",
+    "./src/components/Nav/index.js",
+    "./src/components/Projects/index.js",
+    "./src/components/Resume/index.js",
   ],
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('tw-elements/dist/plugin')
+  ],
 }
