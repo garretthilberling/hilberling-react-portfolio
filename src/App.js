@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import Nav from './components/Nav';
 import About from './components/About';
-import Projects from './components/Projects';
-import Resume from './components/Resume';
-import Contact from './components/Contact';
+import Portfolio from './components/Portfolio';
+import ContactForm from './components/Contact';
 
 
 function App() {
@@ -40,14 +39,14 @@ function App() {
         <div>
           {!contactSelected && !aboutSelected ? (
             <>
-              <Projects
+              <Portfolio
                 currentCategory={currentCategory}
-              ></Projects>
+              ></Portfolio>
             </>
           ) : aboutSelected && !contactSelected ? (
             <About></About>
           ) : (
-            <Contact></Contact>
+            <ContactForm></ContactForm>
           )
         }
         </div>
