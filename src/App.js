@@ -9,7 +9,7 @@ function App() {
   const [categories] = useState([
     {
       name: 'projects',
-      description: "Take a look at my work!"
+      description: "Here are the applications I have built so far, including some group projects."
     },
     {
       name: 'resume',

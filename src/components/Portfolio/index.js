@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 import Resume from '../Resume';
-import { projectArr } from '../../utils/myProjects'
-
+import Projects from '../Projects';
 
 function Portfolio ({ currentCategory }) {
-  const [projectList] = useState(projectArr);
   const { name, description } = currentCategory;
 
   return(
       <section>
           {name === 'resume' ? (
               <>
-                <Resume></Resume>
+                <Resume
+                  name={name}
+                  description={description}
+                ></Resume>
               </>
           ) : (
               <>
-
+                <Projects
+                  name={name}
+                  description={description}
+                ></Projects>
               </>
           )
         }
