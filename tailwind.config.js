@@ -8,7 +8,11 @@ module.exports = {
     "./src/components/Resume/index.js",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'profile-pic': "[url('../../assets/img/profile-pic/profile-pic.jpg')]"
+      }
+    },
   },
   plugins: [
     require('tw-elements/dist/plugin')

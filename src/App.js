@@ -24,7 +24,7 @@ function App() {
   const [aboutSelected, setAboutSelected] = useState(false);
 
   return (
-    <div className="h-screen flex flex-col bg-gradient-to-b from-gray-900 to-stone-900 text-sky-50">
+    <div className="h-screen bg-gradient-to-b from-gray-900 to-stone-900 text-sky-50">
       <Nav 
         categories={categories}
         setCurrentCategory={setCurrentCategory}
@@ -44,7 +44,7 @@ function App() {
               ></Portfolio>
             </>
           ) : aboutSelected && !contactSelected ? (
-            <About></About>
+            <About aboutSelected={aboutSelected}></About>
           ) : (
             <ContactForm></ContactForm>
           )
