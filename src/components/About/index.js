@@ -50,30 +50,32 @@ function About({ aboutSelected }) {
     ]);
 
     return (
-        <section className="grid lg:grid-cols-2 grid-row-2 justify-center justify-items-center">
-            <ScaleFade initialScale={0.6} in={aboutSelected}>
-                <Image 
-                    src={require("../../assets/img/profile-pic/profile-pic.png")} 
-                    alt="Profile Pic" 
-                    className="float-left shadow-2xl shadow-slate-700 bg-transparent"  
-                    boxSize={{ base: '300px', md: '350px', lg: '500px' }}
-                    objectFit="cover"
-                    borderRadius="full"
-                />
-            </ScaleFade>
-            <ul className="lg:pl-0 lg:pr-10 px-5 bg-transparent">
-            {aboutListItems.map(listItem => (
-                <SlideFade in={aboutSelected} offsetX={0} offsetY={listItem.transition}>
-                        <li className="py-6 pr-3 flex bg-transparent">
-                            <div className="flex flex-col justify-center pr-6 text-3xl text-blue-300 bg-transparent">
-                                <FontAwesomeIcon icon={listItem.icon}></FontAwesomeIcon>
-                            </div>
-                            <p>{listItem.point}</p> 
-                        </li>
+        // <slideFade out={!aboutSelected} offsetX={-100} offsetY={0}>
+            <section className="grid lg:grid-cols-2 grid-row-2 justify-center justify-items-center">
+                <SlideFade offsetX={-100} offsetY={0} in={aboutSelected}>
+                    <Image 
+                        src={require("../../assets/img/profile-pic/profile-pic.png")} 
+                        alt="Profile Pic" 
+                        className="float-left shadow-2xl shadow-slate-700 bg-transparent"  
+                        boxSize={{ base: '300px', md: '350px', lg: '500px' }}
+                        objectFit="cover"
+                        borderRadius="full"
+                    />
                 </SlideFade>
-            ))}
-            </ul>
-        </section>
+                <ul className="lg:pl-0 lg:pr-10 px-5 bg-transparent">
+                {aboutListItems.map(listItem => (
+                    <SlideFade in={aboutSelected} offsetX={0} offsetY={listItem.transition}>
+                            <li className="py-6 pr-3 flex bg-transparent">
+                                <div className="flex flex-col justify-center pr-6 text-3xl text-blue-300 bg-transparent">
+                                    <FontAwesomeIcon icon={listItem.icon}></FontAwesomeIcon>
+                                </div>
+                                <p>{listItem.point}</p> 
+                            </li>
+                    </SlideFade>
+                ))}
+                </ul>
+            </section>
+        // </slideFade>
     )
 }
 

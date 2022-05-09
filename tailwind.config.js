@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin');
+
 module.exports = {
   content: [
     "./src/App.js",
@@ -15,6 +17,20 @@ module.exports = {
     },
   },
   plugins: [
-    require('tw-elements/dist/plugin')
+    require('tw-elements/dist/plugin'),
+    plugin(({ addUtilities }) => {
+      addUtilities({
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        '.no-scrollbar::-webkit-scrollbar': {
+          'display': 'none',
+        },
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        '.no-scrollbar': {
+          '-ms-overflow-style': 'none',  /* IE and Edge */
+          'scrollbar-width': 'none',  /* Firefox */
+        },
+      });
+    })
   ],
 }
