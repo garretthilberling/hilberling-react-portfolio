@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
-import { Image, SlideFade, ScaleFade, Box, chakra } from "@chakra-ui/react";
+import { Image, SlideFade, Slide, Box, chakra } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 
 function Projects({ name, description }) {
@@ -14,6 +14,7 @@ function Projects({ name, description }) {
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
   const carousel = useRef(null);
+  const [showDescription, toggleShowDescription] = useState(true)
 
   const projectArr = [
     {
@@ -23,15 +24,11 @@ function Projects({ name, description }) {
           Built as a team, assumed a{" "}
           <span className="text-sky-300 font-semibold">leadership role</span>.
           <br></br>
-          <br></br>
           Pet{paw}Fetcher is an application where users can list their puppies
           for adoption or connect with other users to adopt a pet of their own.
           Users can like and comment on posts and can list their pet, including{" "}
-          <span className="text-sky-300 font-semibold">
-            uploading an image file
-          </span>
-          . This is done by converting the image into a data url and storing it
-          in the database as a string.
+          <span className="text-sky-300 font-semibold">uploading an image file</span>. This is done by converting the image into a <span className="text-sky-300 font-semibold">data url</span> and storing it
+          in the database as a <span className="text-sky-300 font-semibold">string</span>.
         </>
       ),
       githubRepo: "https://github.com/garretthilberling/pet-fetcher",
@@ -135,6 +132,7 @@ function Projects({ name, description }) {
   ];
 
   const moveNext = () => {
+      console.log(currentIndex + 1);
     if (
       carousel.current !== null &&
       carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
@@ -144,6 +142,7 @@ function Projects({ name, description }) {
   };
 
   const movePrev = () => {
+    console.log(currentIndex - 1);
     if (currentIndex > 0) {
       setCurrentIndex((prevState) => prevState - 1);
     }
@@ -176,97 +175,13 @@ function Projects({ name, description }) {
   }, []);
 
   const [projects] = useState(projectArr);
-  const [currentProject, setCurrentProject] = useState(projects[0]);
 
   return (
-    // <div className="carousel my-12 mx-auto items-center text-center">
-    //   <h2 className="text-4xl leading-8 font-semibold mb-12">My projects</h2>
-    //   <div className="relative">
-    //     <div className="flex justify-between absolute top left w-full h-full">
-    //       <button
-    //         onClick={movePrev}
-    //         className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
-    //         disabled={isDisabled("prev")}
-    //       >
-    //         <svg
-    //           xmlns="http://www.w3.org/2000/svg"
-    //           className="h-12 w-20 -ml-5"
-    //           fill="none"
-    //           viewBox="0 0 24 24"
-    //           stroke="currentColor"
-    //           strokeWidth={2}
-    //         >
-    //           <path
-    //             strokeLinecap="round"
-    //             strokeLinejoin="round"
-    //             d="M15 19l-7-7 7-7"
-    //           />
-    //         </svg>
-    //         <span className="sr-only">Prev</span>
-    //       </button>
-    //       <button
-    //         onClick={moveNext}
-    //         className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
-    //         disabled={isDisabled("next")}
-    //       >
-    //         <svg
-    //           xmlns="http://www.w3.org/2000/svg"
-    //           className="h-12 w-20 -ml-5"
-    //           fill="none"
-    //           viewBox="0 0 24 24"
-    //           stroke="currentColor"
-    //           strokeWidth={2}
-    //         >
-    //           <path
-    //             strokeLinecap="round"
-    //             strokeLinejoin="round"
-    //             d="M9 5l7 7-7 7"
-    //           />
-    //         </svg>
-    //         <span className="sr-only">Next</span>
-    //       </button>
-    //     </div>
-    //     <div
-    //       ref={carousel}
-    //       className="carousel-container relative flex gap-1 scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
-    //     >
-    //       {projects.map((project, index) => (
-    //         <div
-    //           key={index}
-    //           className="carousel-item text-center relative w-64 h-64 snap-start"
-    //         >
-    //           <a
-    //             href={project.deployedUrl}
-    //             className="h-full w-full aspect-square block bg-origin-padding bg-left-top bg-cover bg-no-repeat z-0"
-    //             style={{
-    //               backgroundImage: `url(../../assets/img/apps/${index}.jpg})`,
-    //             }}
-    //           >
-    //             <img
-    //               src={require(`../../assets/img/apps/${index}.jpg`)}
-    //               alt={project.name}
-    //               className="w-full aspect-square hidden"
-    //             />
-    //           </a>
-    //           <a
-    //             href={project.deployedUrl}
-    //             className="h-full w-full aspect-square block absolute top-0 left-0 transition-opacity duration-300 opacity-0 hover:opacity-100 bg-blue-800/75 z-10"
-    //           >
-    //             <h3 className="text-white py-6 px-3 mx-auto text-xl">
-    //               {project.name}
-    //             </h3>
-    //           </a>
-    //         </div>
-    //       ))}
-    //     </div>
-    //   </div>
-    // </div>
-
-    <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
+      <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
         <section className="no-scrollbar">
-            <ul ref={carousel} className="flex overflow-x-auto lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 after:w-[30vw] no-scrollbar">
+            <ul ref={carousel} className="flex overflow-scroll scroll-smooth lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 after:w-[30vw] no-scrollbar">
                 {projects.map((project, index) => (
-                    <li onmouseover={() => setCurrentProject(project)} className="shrink-0 snap-center" key={`project-${index}`}>
+                    <li className="shrink-0 snap-center" key={`project-${index}`}>
                         <div className="relative">
                             <img
                                 id={`carousel-item-${index}`}
@@ -274,9 +189,22 @@ function Projects({ name, description }) {
                                 className="block"
                                 alt={project.name}
                             />
-                            <div className="carousel-caption hidden md:block absolute bg-slate-900 bg-opacity-60 px-3 rounded">
-                                <h5 className="text-3xl">{project.name}</h5>
-                                <p className="pt-2">{project.description}</p>
+                            <div className={`carousel-caption hidden md:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${!showDescription && 'opacity-0 hover:opacity-80'} transition-all ease-in-out duration-300 px-3 rounded`}>
+                                <div className="flex justify-end pr-4">
+                                {showDescription ?
+                                    <button 
+                                        className="hover:text-sky-200 transition-all ease-in-out duration-300"
+                                        onClick={() => toggleShowDescription(false)}
+                                    >Hide</button>
+                                :
+                                    <button 
+                                        className="hover:text-sky-200 transition-all ease-in-out duration-300"
+                                        onClick={() => toggleShowDescription(true)}
+                                    >Show</button>
+                                }
+                                </div>
+                                <h5 className="text-3xl text-center">{project.name}</h5>
+                                <p className="pt-2 text-center">{project.description}</p>
                                 <div className="flex justify-center pt-3">
                                     <div className="grid grid-cols-2">
                                         <div>
@@ -299,7 +227,7 @@ function Projects({ name, description }) {
                 ))}
                 <button
                 onClick={movePrev}
-                className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300 text-center absolute top-0 bottom-0 border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                className="hover:bg-sky-100/75 text-sky-50 hover:text-slate-900 w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300 text-center absolute top-0 bottom-0 border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
                 disabled={isDisabled("prev")}
                 >
                     <svg
@@ -320,7 +248,7 @@ function Projects({ name, description }) {
                 </button>
                 <button
                     onClick={moveNext}
-                    className="hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300 absolute top-0 bottom-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                    className="hover:bg-sky-100/75 text-sky-50 hover:text-slate-900 w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300 absolute top-0 bottom-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
                     disabled={isDisabled("next")}
                 >
                     <svg
@@ -370,7 +298,10 @@ function Projects({ name, description }) {
                 <ul className="grid grid-cols-2">
                     {projects.map((project, index) => (
                         <li key={`snap-to-${index}`}>
-                            <a href={`#carousel-item-${index}`} className=" transition-all scroll-smooth duration-300 sm:hidden lg:block hover:text-sky-200 ">{project.name}</a>
+                            <a 
+                                href={`#carousel-item-${index}`} 
+                                className=" transition-all scroll-smooth duration-300 sm:hidden lg:block hover:text-sky-200"
+                            >{project.name}</a>
                         </li>
                     ))}
                 </ul>

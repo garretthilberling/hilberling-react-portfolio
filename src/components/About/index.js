@@ -51,7 +51,7 @@ function About({ aboutSelected }) {
 
     return (
             <section className="grid lg:grid-cols-2 grid-row-2 justify-center justify-items-center">
-                <SlideFade offsetX={-100} offsetY={0} in={aboutSelected}>
+                <SlideFade offsetX={-100} offsetY={0} in={aboutSelected} >
                     <Image 
                         src={require("../../assets/img/profile-pic/profile-pic.png")} 
                         alt="Profile Pic" 
