@@ -24,7 +24,7 @@ function App() {
   const [aboutSelected, setAboutSelected] = useState(false);
 
   return (
-    <div className="h-screen bg-gradient-to-b from-gray-900 to-stone-900 text-sky-50">
+    <div className="h-screen bg-gradient-to-b from-gray-900 to-stone-900 text-sky-50 no-scrollbar">
       <Nav 
         categories={categories}
         setCurrentCategory={setCurrentCategory}
