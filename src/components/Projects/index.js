@@ -22,11 +22,7 @@ function Projects({ name, description }) {
         <>
           Built as a team, assumed a <span className="text-sky-300 font-semibold">leadership role</span>.
           <br></br>
-          Pet{paw}Fetcher is an application where users can list their puppies
-          for adoption or connect with other users to adopt a pet of their own.
-          Users can like and comment on posts and can list their pet, including
-          <span className="text-sky-300 font-semibold">uploading an image file</span>. This is done by converting the image into a <span className="text-sky-300 font-semibold">data url</span> and storing it
-          in the database as a <span className="text-sky-300 font-semibold">string</span>.
+          Pet{paw}Fetcher is an application where users can list their puppies for adoption or connect with other users to adopt a pet of their own. Users can like and comment on posts and can list their pet, including <span className="text-sky-300 font-semibold">uploading an image file</span>. This is done by converting the image into a <span className="text-sky-300 font-semibold">data url</span> and storing it in the database as a <span className="text-sky-300 font-semibold">string</span> (one of my contributions).
         </>
       ),
       githubRepo: "https://github.com/garretthilberling/pet-fetcher",
@@ -38,9 +34,7 @@ function Projects({ name, description }) {
       description: (
         <>
           Social🧑‍🤝‍🧑Network🤖API is a simple API built to be used as the backend
-          for a <span className="text-sky-300 font-semibold">social networking website</span>. Create a user, add a user as a friend, share your thoughts, and react to the thoughts of other users! The languages and technologies
-          used to build this application are: JavaScript, ES6, MongoDB, and
-          Mongoose.
+          for a <span className="text-sky-300 font-semibold">social networking website</span>. Create a user, add a user as a friend, share your thoughts, and react to the thoughts of other users! The languages and technologies used to build this application are: JavaScript, ES6, MongoDB, and Mongoose.
         </>
       ),
       githubRepo: "https://github.com/garretthilberling/social-network-api",
