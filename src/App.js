@@ -25,7 +25,7 @@ function App() {
   const [aboutSelected, setAboutSelected] = useState(false);
 
   return (
-    <div className="h-screen bg-gradient-to-b from-gray-900 to-stone-900 text-sky-50 no-scrollbar">
+    <div className="flex flex-col h-screen bg-gradient-to-b from-gray-900 to-slate-900 text-sky-50 no-scrollbar">
       <Nav 
         categories={categories}
         setCurrentCategory={setCurrentCategory}
@@ -36,7 +36,7 @@ function App() {
         setAboutSelected={setAboutSelected}
       ></Nav>
 
-      <main>
+      <main className="flex-grow">
         <div>
           {!contactSelected && !aboutSelected ? (
             <>
