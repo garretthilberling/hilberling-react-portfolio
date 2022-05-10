@@ -12,6 +12,34 @@ html, body {
   scroll-behavior: smooth;
 }
 
+
+.footer-lines {
+  overflow: hidden;
+  text-align: center;
+}
+
+.footer-lines:before,
+.footer-lines:after {
+  content: "";
+  display: inline-block;
+  height: 1px;
+  position: relative;
+  vertical-align: 70%;
+  width: 50%;
+}
+
+.footer-lines:before {
+  background-image: linear-gradient(to right, transparent, #f0f9ff); 
+  right: 0.5em;
+  margin-left: -50%;
+}
+
+.footer-lines:after {
+  background-image: linear-gradient(to left, transparent, #f0f9ff); 
+  left: 0.5em;
+  margin-right: -50%;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

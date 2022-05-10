@@ -3,6 +3,7 @@ import { capitalizeFirstLetter }from '../../utils/helpers';
 
 
 function Nav(props) {
+    document.title = 'Garrett Hilberling'
     const {
         categories = [],
         setCurrentCategory,
@@ -13,9 +14,10 @@ function Nav(props) {
         setAboutSelected
     } = props;
 
-    useEffect(() => {
-        document.title = capitalizeFirstLetter(currentCategory.name);
-    }, [currentCategory]);
+    // useEffect(() => {
+    //     document.title = capitalizeFirstLetter(currentCategory.name);
+    // }, [currentCategory]);
+
 
     return (
         <header className="p-5 py-10">
