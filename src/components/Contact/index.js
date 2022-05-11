@@ -48,18 +48,18 @@ function ContactForm() {
                             <div>
                                 <label htmlFor="name" className="">Name:</label>
                                 <br></br>
-                                <input type="text" name="name" defaultValue={name} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-slate-900 text-sky-50 px-1"/>
+                                <input type="text" name="name" defaultValue={name} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
                             </div>
                             <div>
                                 <label htmlFor="email"  className="">Email address:</label>
                                 <br></br>
-                                <input type="email" name="email" defaultValue={email} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-slate-900 text-sky-50 px-1"/>
+                                <input type="email" name="email" defaultValue={email} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
                             </div>
                             <div>
                                 <label htmlFor="message" className="">Message:</label>
                                 <br></br>
                                 <div className="flex justify-center">
-                                    <textarea name="message" rows="4" cols="22" defaultValue={message} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-slate-900 text-sky-50 px-1"/>
+                                    <textarea name="message" rows="4" cols="22" defaultValue={message} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
                                 </div>
                             </div>
                         </div>
