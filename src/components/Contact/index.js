@@ -64,11 +64,11 @@ function ContactForm() {
                             </div>
                         </div>
                     {errorMessage && (
-                        <div>
-                            <p className="text-red-400 text-center transition-all fade-in-out duration-300 py-1">{errorMessage}</p>
+                        <div className="">
+                            <p className="text-red-400 text-center pt-1">{errorMessage}</p>
                         </div>
                     )}
-                    <div className="text-center">
+                    <div className="text-center mt-1">
                         <button type="submit" data-testid="submit" className="hover:bg-sky-50 hover:text-slate-900 transition-all fade-in-out duration-300 py-1 px-2 rounded">Submit</button>
                     </div>
                     </form>

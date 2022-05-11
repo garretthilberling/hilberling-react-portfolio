@@ -135,7 +135,7 @@ function Projects({ name, description }) {
   return (
       <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
         <section className="no-scrollbar">
-            <ul ref={carousel} className="flex overflow-scroll scroll-smooth lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 after:w-[30vw] no-scrollbar">
+            <ul ref={carousel} className="flex overflow-scroll scroll-smooth lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 lg:after:w-[30vw] md:after:w-[15vw] after:w-[10vw] no-scrollbar">
                 {projects.map((project, index) => (
                     <li className="shrink-0 snap-center" key={`project-${index}`}>
                         <div className="relative">

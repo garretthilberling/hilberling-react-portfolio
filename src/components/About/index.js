@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCoffee, faDatabase, faPaw } from '@fortawesome/free-solid-svg-icons'
 import { faSmile, faCalendarTimes } from '@fortawesome/free-regular-svg-icons'
-import { Image, SlideFade, ScaleFade } from '@chakra-ui/react'
+import { Image, SlideFade } from '@chakra-ui/react'
 
 
 function About({ aboutSelected }) {

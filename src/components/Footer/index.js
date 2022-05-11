@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { LinkedinOutlined, GithubOutlined } from '@ant-design/icons';
 
 function Footer() {
    return (
