@@ -18,10 +18,10 @@ Click through the sections in the Nav bar to get to know me and my work! I am cu
 </p>
     
 ## Installation
-No installation required! View the application in full via the following deployed URL: https://garretthilberling.github.io/hilberling-react-portfolio/
+No installation required! View the application in full via the [deployed URL](https://garretthilberling.github.io/hilberling-react-portfolio/).
 
 ## Questions
-If you have any questions about this project, please contact me via GitHub [here](https://github.com/garretthilberling)
+If you have any questions about this project, please contact me via GitHub [here](https://github.com/garretthilberling)!
 
 ## Credits
 This project was created by:
