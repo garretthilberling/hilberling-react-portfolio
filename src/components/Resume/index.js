@@ -13,7 +13,6 @@ function Resume() {
                         width="60%" 
                         scrolling="auto"
                         type="application/pdf"
-                        className=""
                     />
             </div>
         </section>
