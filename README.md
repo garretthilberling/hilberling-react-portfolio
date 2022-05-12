@@ -13,7 +13,7 @@ A SPA portfolio showing off the projects I have completed as a part of the UCF B
 ## Usage
 Click through the sections in the Nav bar to get to know me and my work! I am currently seeking employment in Seattle, Washington so if you enjoy my work please contact me at garrettdrewhilberling@gmail.com and/or connect with me on [LinkedIn](https://www.linkedin.com/in/garretthilberling/).
 
-<img src="./public/assets/img/gif-demonstration-4.gif" width="500" />
+<img src="./public/assets/img/gif-demonstration-4.gif" width="700" />
 
 ## Installation
 No installation required! View the application in full via the following deployed URL: https://garretthilberling.github.io/hilberling-react-portfolio/
