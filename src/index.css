@@ -6,6 +6,13 @@
   background-color: #0f172a;
 }
 
+
+:root::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 html, body {
   padding: 0;
   margin: 0;

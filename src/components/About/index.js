@@ -19,7 +19,7 @@ function About({ aboutSelected }) {
             icon: faSmile,
             point: 
             <>
-                <p>My passion is creating apps through the <span className="text-sky-300 font-semibold">perspective of the user</span>.  I love creating logic users can interact with directly using JavaScript. My favorite part about developing software is creating an <span className="text-sky-300 font-semibold">experience</span> for the user.</p> 
+                My passion is creating apps through the <span className="text-sky-300 font-semibold">perspective of the user</span>.  I love creating logic users can interact with directly using JavaScript. My favorite part about developing software is creating an <span className="text-sky-300 font-semibold">experience</span> for the user.
             </>,
             transition: -40
         },
@@ -27,7 +27,7 @@ function About({ aboutSelected }) {
             icon: faDatabase,
             point:
             <>
-                <p>I really enjoy working with <span className="text-sky-300 font-semibold">databases</span>, and have experience with <span className="text-sky-300 font-semibold">mySQL</span>, <span className="text-sky-300 font-semibold">MongoDB/Mongoose</span>, and <span className="text-sky-300 font-semibold">GraphQL</span>. A well structured <span className="text-sky-300 font-semibold">database architecture</span> that is constructed for optimal performance is just as essential for a satisfying user experience as visual aesthetics.</p>
+                I really enjoy working with <span className="text-sky-300 font-semibold">databases</span>, and have experience with <span className="text-sky-300 font-semibold">mySQL</span>, <span className="text-sky-300 font-semibold">MongoDB/Mongoose</span>, and <span className="text-sky-300 font-semibold">GraphQL</span>. A well structured <span className="text-sky-300 font-semibold">database architecture</span> that is constructed for optimal performance is just as essential for a satisfying user experience as visual aesthetics.
             </>,
             transition: -60
         },
@@ -35,7 +35,7 @@ function About({ aboutSelected }) {
             icon: faCalendarTimes,
             point: 
             <>
-              <p>I <span className="text-sky-300 font-semibold">love</span> learning about new languages and technologies. After I am finished with my bootcamp I intend to learn <span className="text-sky-300 font-semibold">C++</span>, <span className="text-sky-300 font-semibold">C#</span>, and <span className="text-sky-300 font-semibold">the .NET framwork</span>.</p> 
+              I <span className="text-sky-300 font-semibold">love</span> learning about new languages and technologies. After I am finished with my bootcamp I intend to learn <span className="text-sky-300 font-semibold">C++</span>, <span className="text-sky-300 font-semibold">C#</span>, and <span className="text-sky-300 font-semibold">the .NET framwork</span>.
             </>,
             transition: -80
         },
@@ -43,7 +43,7 @@ function About({ aboutSelected }) {
             icon: faPaw,
             point:
             <>
-               <p>I am a huge fan of <span className="text-sky-300 font-semibold">puppies</span>. It's so bad I even <span className="text-sky-300 font-semibold">led a team</span> in designing an entire application dedicated to them!!</p>
+               I am a huge fan of <span className="text-sky-300 font-semibold">puppies</span>. It's so bad I even <span className="text-sky-300 font-semibold">led a team</span> in designing an entire application dedicated to them!!
             </>,
             transition: -100
         }

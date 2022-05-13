@@ -2,9 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { SlideFade } from "@chakra-ui/react";
+import { useLocation } from "react-router-dom";
 
 
-function Projects({ name, description }) {
+function Projects({ name }) {
   const paw = (
     <FontAwesomeIcon
       icon={faPaw}
@@ -128,6 +129,7 @@ function Projects({ name, description }) {
   useEffect(() => {
     JSON.stringify(changeUrl);
     console.log(JSON.stringify(changeUrl));
+    console.log()
   }, [changeUrl]);
 
   useEffect(() => {
@@ -148,13 +150,13 @@ function Projects({ name, description }) {
 
   return (
       <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
-        <section className="no-scrollbar" onLoad={() => setChangeUrl(window.location.pathname)}>
+        <section className="no-scrollbar 2xl:container 2xl:mx-auto 2xl:px-0 py-3 px-10" onLoad={() => setChangeUrl(window.location.pathname)}>
           <div className="lg:hidden block flex justify-center text-lg text-sky-400 mb-3">
-            <p className="animate-swipe-me"><i class="fa-solid fa-arrow-left pr-3"></i><span className="text-sky-200">Swipe</span><i class="fa-solid fa-arrow-right pl-3"></i></p>
+            <p className="animate-swipe-me"><i className="fa-solid fa-arrow-left pr-3"></i><span className="text-sky-200">Swipe</span><i className="fa-solid fa-arrow-right pl-3"></i></p>
           </div>
             <ul ref={carousel} className="flex overflow-scroll scroll-smooth lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 lg:after:w-[30vw] md:after:w-[15vw] after:w-[10vw] no-scrollbar shadow-lg">
                 {projects.map((project, index) => (
-                    <li className="shrink-0 snap-center lg:w-auto w-full h-full" key={`project-${index}`}>
+                    <li className="shrink-0 snap-center lg:w-auto w-full h-full" key={`project-card-${index}`}>
                         <div className="relative">
                             <img
                                 id={`carousel-item-${index}`}
@@ -170,29 +172,29 @@ function Projects({ name, description }) {
                                 <div className="text-lg">
                                     {smShowDescription ?
                                         <button 
-                                            className="hover:text-sky-200 transition-all ease-in-out duration-300"
+                                            className="text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
                                             onClick={() => toggleSmShowDescription(false)}
-                                        >Hide Description</button>
+                                        >Less</button>
                                     :
                                         <button 
-                                            className="hover:text-sky-200 transition-all ease-in-out duration-300"
+                                            className="text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
                                             onClick={() => toggleSmShowDescription(true)}
-                                        >Show Description</button>
+                                        >More...</button>
                                     }
                                     </div>
                                 </div>
                               {smShowDescription && <p className="text-lg transition-all ease-in-out duration-300">{project.description}</p>}
                               <div className="flex justify-center pt-6">
-                                <div className="grid grid-cols-2">
+                                <div className="grid grid-cols-2 gap-10">
                                   <div>
                                     <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.githubRepo}>Github Repo</a>
                                   </div>
                                   <div>
                                     {
                                       index !== 1 && index !== 2 && index !== 3 ? (
-                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Try it for yourself!</a>
+                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Try it out!</a>
                                       ) : (
-                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 pb-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Video Demonstration</a>
+                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Video Demo</a>
                                       )
                                     }
                                   </div>

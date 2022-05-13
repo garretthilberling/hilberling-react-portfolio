@@ -9,12 +9,10 @@ import Footer from './components/Footer';
 function App() {
   const [categories] = useState([
     {
-      name: 'projects',
-      description: "Here are the applications I have built so far, including some group projects."
+      name: 'projects'
     },
     {
-      name: 'resume',
-      description: 'Here is my resume!'
+      name: 'resume'
     }
   ]);
 

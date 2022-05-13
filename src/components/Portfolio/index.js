@@ -3,7 +3,7 @@ import Resume from '../Resume';
 import Projects from '../Projects';
 
 function Portfolio ({ currentCategory }) {
-  const { name, description } = currentCategory;
+  const { name } = currentCategory;
 
   return(
       <section>
@@ -11,14 +11,12 @@ function Portfolio ({ currentCategory }) {
               <>
                 <Resume
                   name={name}
-                  description={description}
                 ></Resume>
               </>
           ) : (
               <div className="2xl:container 2xl:mx-auto 2xl:px-0 py-3 px-10">
                 <Projects
                   name={name}
-                  description={description}
                 ></Projects>
               </div>
           )
