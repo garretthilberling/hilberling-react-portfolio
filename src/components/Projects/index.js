@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { SlideFade } from "@chakra-ui/react";
 
+
 function Projects({ name, description }) {
   const paw = (
     <FontAwesomeIcon
@@ -12,9 +13,11 @@ function Projects({ name, description }) {
   );
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  const carousel = useRef(null);
+  let carousel = useRef(null);
   const [showDescription, toggleShowDescription] = useState(true)
+  const [smShowDescription, toggleSmShowDescription] = useState(false)
 
+  const [changeUrl, setChangeUrl] = useState(0);
   const [projects] = useState([
     {
       name: <>Pet{paw}Fetcher</>,
@@ -95,6 +98,7 @@ function Projects({ name, description }) {
       carousel.current !== null &&
       carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
     ) {
+      console.log(carousel);
       setCurrentIndex((prevState) => prevState + 1);
     }
   };
@@ -112,6 +116,7 @@ function Projects({ name, description }) {
     }
 
     if (direction === "next" && carousel.current !== null) {
+      console.log(carousel);
       return (
         carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
       );
@@ -121,7 +126,13 @@ function Projects({ name, description }) {
   };
 
   useEffect(() => {
+    JSON.stringify(changeUrl);
+    console.log(JSON.stringify(changeUrl));
+  }, [changeUrl]);
+
+  useEffect(() => {
     if (carousel !== null && carousel.current !== null) {
+      console.log(carousel);
       carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
     }
   }, [currentIndex]);
@@ -132,20 +143,65 @@ function Projects({ name, description }) {
       : 0;
   }, []);
 
+  
+  
+
   return (
       <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
-        <section className="no-scrollbar">
-            <ul ref={carousel} className="flex overflow-scroll scroll-smooth lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 lg:after:w-[30vw] md:after:w-[15vw] after:w-[10vw] no-scrollbar">
+        <section className="no-scrollbar" onLoad={() => setChangeUrl(window.location.pathname)}>
+          <div className="lg:hidden block flex justify-center text-lg text-sky-400 mb-3">
+            <p className="animate-swipe-me"><i class="fa-solid fa-arrow-left pr-3"></i><span className="text-sky-200">Swipe</span><i class="fa-solid fa-arrow-right pl-3"></i></p>
+          </div>
+            <ul ref={carousel} className="flex overflow-scroll scroll-smooth lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 lg:after:w-[30vw] md:after:w-[15vw] after:w-[10vw] no-scrollbar shadow-lg">
                 {projects.map((project, index) => (
-                    <li className="shrink-0 snap-center" key={`project-${index}`}>
+                    <li className="shrink-0 snap-center lg:w-auto w-full h-full" key={`project-${index}`}>
                         <div className="relative">
                             <img
                                 id={`carousel-item-${index}`}
                                 src={require(`../../assets/img/apps/${index}.jpg`)}
-                                className="block"
+                                className="block rounded-t-lg lg:rounded-lg"
                                 alt={project.name}
                             />
-                            <div className={`carousel-caption hidden md:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${!showDescription && 'opacity-0 hover:opacity-80'} transition-all ease-in-out duration-300 px-3 rounded`}>
+
+                            {/* small-medium screen caption */}
+                            <div className="px-6 py-4 rounded-b-lg block lg:hidden bg-gradient-to-b from-slate-700 to-slate-600">
+                              <div className={`font-bold mb-2 flex justify-between`}>
+                                <h3 className="text-xl">{project.name}</h3>
+                                <div className="text-lg">
+                                    {smShowDescription ?
+                                        <button 
+                                            className="hover:text-sky-200 transition-all ease-in-out duration-300"
+                                            onClick={() => toggleSmShowDescription(false)}
+                                        >Hide Description</button>
+                                    :
+                                        <button 
+                                            className="hover:text-sky-200 transition-all ease-in-out duration-300"
+                                            onClick={() => toggleSmShowDescription(true)}
+                                        >Show Description</button>
+                                    }
+                                    </div>
+                                </div>
+                              {smShowDescription && <p className="text-lg transition-all ease-in-out duration-300">{project.description}</p>}
+                              <div className="flex justify-center pt-6">
+                                <div className="grid grid-cols-2">
+                                  <div>
+                                    <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.githubRepo}>Github Repo</a>
+                                  </div>
+                                  <div>
+                                    {
+                                      index !== 1 && index !== 2 && index !== 3 ? (
+                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Try it for yourself!</a>
+                                      ) : (
+                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 pb-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Video Demonstration</a>
+                                      )
+                                    }
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+                            {/* large screen caption */}
+                            <div className={`carousel-caption hidden lg:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${!showDescription && 'opacity-0 hover:opacity-80'} transition-all ease-in-out duration-300 px-3 rounded`}>
                                 <div className="flex justify-end pr-4">
                                 {showDescription ?
                                     <button 
@@ -176,7 +232,7 @@ function Projects({ name, description }) {
                                                 )
                                             }
                                         </div>
-                                    </div>
+                                  </div>
                                 </div>
                             </div>
                         </div>
@@ -184,7 +240,7 @@ function Projects({ name, description }) {
                 ))}
                 <button
                 onClick={movePrev}
-                className="hover:bg-sky-100/75 text-sky-50 hover:text-slate-900 w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300 text-center absolute top-0 bottom-0 border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+                className="lg:block hidden hover:bg-sky-100/75 text-sky-50 hover:text-slate-900 w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300 text-center absolute top-0 bottom-0 border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
                 disabled={isDisabled("prev")}
                 >
                     <svg
@@ -205,7 +261,7 @@ function Projects({ name, description }) {
                 </button>
                 <button
                     onClick={moveNext}
-                    className="hover:bg-sky-100/75 text-sky-50 hover:text-slate-900 w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300 absolute top-0 bottom-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+                    className="lg:block hidden hover:bg-sky-100/75 text-sky-50 hover:text-slate-900 w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300 absolute top-0 bottom-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
                     disabled={isDisabled("next")}
                 >
                     <svg
@@ -228,12 +284,20 @@ function Projects({ name, description }) {
             <nav className="flex justify-center py-5">
                 <ul className="grid grid-cols-2">
                     {projects.map((project, index) => (
+                      <>
+                        <li key={`small-desc-${index}`} className="block lg:hidden">
+                          <div className="bg-slate-200">
+
+                          </div>
+                        </li>
+
                         <li key={`snap-to-${index}`}>
                             <a 
                                 href={`#carousel-item-${index}`} 
-                                className=" transition-all scroll-smooth duration-300 sm:hidden lg:block hover:text-sky-200"
+                                className=" transition-all scroll-smooth duration-300 hidden lg:block hover:text-sky-200"
                             >{project.name}</a>
                         </li>
+                      </>
                     ))}
                 </ul>
             </nav>

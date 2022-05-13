@@ -40,38 +40,40 @@ function ContactForm() {
 
     return (
         <section className="flex justify-center">
-            <div className="bg-gradient-to-b from-sky-500 to-indigo-600 px-2 pt-3 pb-1 rounded-lg">
-                <h1 className="text-center">Send me an email!</h1>
-                <div className="">
-                    <form id="contact-form" onSubmit={handleSubmit} className="inline-block">
-                        <div className="">
+            <div className="bg-gradient-to-b from-sky-500 to-indigo-600 px-2 pt-3 pb-1 rounded-lg text-lg">
+                <div className="flex justify-center">
+                    <div className="">
+                    <h1 className="text-center">Send me an email!</h1>
+                        <form id="contact-form" onSubmit={handleSubmit} className="inline-block">
                             <div>
-                                <label htmlFor="name" className="">Name:</label>
-                                <br></br>
-                                <input type="text" name="name" defaultValue={name} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
-                            </div>
-                            <div>
-                                <label htmlFor="email"  className="">Email address:</label>
-                                <br></br>
-                                <input type="email" name="email" defaultValue={email} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
-                            </div>
-                            <div>
-                                <label htmlFor="message" className="">Message:</label>
-                                <br></br>
-                                <div className="flex justify-center">
-                                    <textarea name="message" rows="4" cols="22" defaultValue={message} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
+                                <div className="grow">
+                                    <label htmlFor="name" className="">Name:</label>
+                                    <br></br>
+                                    <input type="text" name="name" defaultValue={name} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
+                                </div>
+                                <div>
+                                    <label htmlFor="email"  className="">Email address:</label>
+                                    <br></br>
+                                    <input type="email" name="email" defaultValue={email} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
+                                </div>
+                                <div>
+                                    <label htmlFor="message" className="">Message:</label>
+                                    <br></br>
+                                    <div className="flex justify-center">
+                                        <textarea name="message" rows="4" cols="22" defaultValue={message} onBlur={handleChange} className="w-100 inline-block border-1 border-solid border-sky-50 box-border bg-sky-50 text-slate-900 px-1"/>
+                                    </div>
                                 </div>
                             </div>
+                        {errorMessage && (
+                            <div className="">
+                                <p className="text-red-400 text-center pt-1">{errorMessage}</p>
+                            </div>
+                        )}
+                        <div className="text-center mt-1">
+                            <button type="submit" data-testid="submit" className="hover:bg-sky-50 hover:text-slate-900 transition-all fade-in-out duration-300 py-1 px-2 rounded">Submit</button>
                         </div>
-                    {errorMessage && (
-                        <div className="">
-                            <p className="text-red-400 text-center pt-1">{errorMessage}</p>
-                        </div>
-                    )}
-                    <div className="text-center mt-1">
-                        <button type="submit" data-testid="submit" className="hover:bg-sky-50 hover:text-slate-900 transition-all fade-in-out duration-300 py-1 px-2 rounded">Submit</button>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </section>
