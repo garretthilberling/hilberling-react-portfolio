@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { SlideFade } from "@chakra-ui/react";
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import LgScreenCarousel from '../LgScreenCarousel';
 
 function Projects({ name }) {
@@ -95,9 +94,9 @@ function Projects({ name }) {
           <div className="lg:hidden block flex justify-center text-lg text-sky-400 mb-3">
             <p className="animate-swipe-me"><i className="fa-solid fa-arrow-left pr-3"></i><span className="text-sky-200">Swipe</span><i className="fa-solid fa-arrow-right pl-3"></i></p>
           </div>
-          <div className="lg:block md:hidden sm:hidden">
+          <span className="lg:block md:hidden hidden">
             <LgScreenCarousel />
-          </div>
+          </span>
 
           {/* scrollable carousel, small-medium screens */}
             <ul className="lg:hidden block flex overflow-scroll scroll-smooth gap-1 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 before:w-[10vw] after:shrink-0 after:w-[10vw] no-scrollbar shadow-lg">

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
+import { Slide } from '@chakra-ui/react'
 
 function LgScreenCarousel() {
   const paw = (
@@ -16,9 +16,8 @@ function LgScreenCarousel() {
       name: <>Pet{paw}Fetcher</>,
       description: (
         <>
-          Built as a team, assumed a{" "}
-          <span className="text-sky-300 font-semibold">leadership role</span>.
-          <br></br>
+          <div className="pf-team">(Built as a team, assumed a{" "}
+          <span className="text-sky-300 font-semibold">leadership role)</span>.</div>
           Pet{paw}Fetcher is an application where users can list their puppies
           for adoption or connect with other users to adopt a pet of their own.
           Users can like and comment on posts and can list their pet, including{" "}
@@ -133,350 +132,308 @@ function LgScreenCarousel() {
     },
   ]);
 
-  const [showDescription, toggleShowDescription] = useState(true);
+  const [showDescription, toggleShowDescription] = useState(false);
 
   return (
       <Carousel>
-        <div>
-          <img
-            src={require(`../../assets/img/apps/${0}.jpg`)}
-            className="block rounded-t-lg lg:rounded-lg"
-            alt="pet-fetcher"
-          />
-
-          <div
-            className={`carousel-caption hidden lg:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${
-              !showDescription && "opacity-0 hover:opacity-80"
-            } transition-all ease-in-out duration-300 px-3 rounded`}
-          >
-            <div className="flex justify-end pr-4">
-              {showDescription ? (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(false)}
-                >
-                  Hide Description
-                </button>
-              ) : (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(true)}
-                >
-                  Show Description
-                </button>
-              )}
-            </div>
-            <h5 className="text-3xl text-center">{projects[0].name}</h5>
-            {showDescription && (
-              <p className="pt-2 text-center">{projects[0].description}</p>
-            )}
-
-            <div className="flex justify-center pt-3">
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
-                    href={projects[0].githubRepo}
-                  >
-                    Github Repo
-                  </a>
+        <div className="relative">
+            <img
+              src={require(`../../assets/img/apps/${0}.jpg`)}
+              className="block rounded-t-lg lg:rounded-lg"
+              alt="pet-fetcher"
+            />
+            <div className="legend lg-carousel">
+                <div className="more-less">
+                  {showDescription ? (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300 text-lg"
+                        onClick={() => toggleShowDescription(false)}
+                      >
+                        show less
+                      </button>
+                  ) : (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
+                        onClick={() => toggleShowDescription(true)}
+                      >
+                        more...
+                      </button>
+                  )}
                 </div>
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
-                    href={projects[0].deployedUrl}
-                  >
-                    Try it for yourself!
-                  </a>
+              <h5 className="text-3xl text-center">{projects[0].name}</h5>
+                <p className={`pt-2 text-center text-lg desc-align ${showDescription ? 'block' : 'hidden'}`}>{projects[0].description}</p>
+
+              <div className="flex justify-center pt-3 pl-3 text-lg">
+                <div className="grid grid-cols-2">
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
+                      href={projects[0].githubRepo}
+                    >
+                      Github Repo
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
+                      href={projects[0].deployedUrl}
+                    >
+                      Try it for yourself!
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
-        <div>
-          <img
-            src={require(`../../assets/img/apps/${1}.jpg`)}
-            className="block rounded-t-lg lg:rounded-lg"
-            alt="social-network-api"
-          />
-
-          <div
-            className={`carousel-caption hidden lg:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${
-              !showDescription && "opacity-0 hover:opacity-80"
-            } transition-all ease-in-out duration-300 px-3 rounded`}
-          >
-            <div className="flex justify-end pr-4">
-              {showDescription ? (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(false)}
-                >
-                  Hide Description
-                </button>
-              ) : (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(true)}
-                >
-                  Show Description
-                </button>
-              )}
-            </div>
-            <h5 className="text-3xl text-center">{projects[1].name}</h5>
-            {showDescription && (
-              <p className="pt-2 text-center">{projects[1].description}</p>
-            )}
-
-            <div className="flex justify-center pt-3">
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
-                    href={projects[1].githubRepo}
-                  >
-                    Github Repo
-                  </a>
+        <div className="relative">
+            <img
+              src={require(`../../assets/img/apps/${1}.jpg`)}
+              className="block rounded-t-lg lg:rounded-lg"
+              alt="pet-fetcher"
+            />
+            <div className="legend lg-carousel">
+                <div className="more-less">
+                  {showDescription ? (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300 text-lg"
+                        onClick={() => toggleShowDescription(false)}
+                      >
+                        show less
+                      </button>
+                  ) : (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
+                        onClick={() => toggleShowDescription(true)}
+                      >
+                        more...
+                      </button>
+                  )}
                 </div>
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
-                    href={projects[1].deployedUrl}
-                  >
-                    Video Demonstration
-                  </a>
+              <h5 className="text-3xl text-center">{projects[1].name}</h5>
+                <p className={`pt-2 text-center text-lg desc-align ${showDescription ? 'block' : 'hidden'}`}>{projects[1].description}</p>
+
+              <div className="flex justify-center pt-3 pl-3 text-lg">
+                <div className="grid grid-cols-2">
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
+                      href={projects[1].githubRepo}
+                    >
+                      Github Repo
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
+                      href={projects[1].deployedUrl}
+                    >
+                      Video Demonstration
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
-        <div>
-          <img
-            src={require(`../../assets/img/apps/${2}.jpg`)}
-            className="block rounded-t-lg lg:rounded-lg"
-            alt="employee-tracker"
-          />
-
-          <div
-            className={`carousel-caption hidden lg:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${
-              !showDescription && "opacity-0 hover:opacity-80"
-            } transition-all ease-in-out duration-300 px-3 rounded`}
-          >
-            <div className="flex justify-end pr-4">
-              {showDescription ? (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(false)}
-                >
-                  Hide Description
-                </button>
-              ) : (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(true)}
-                >
-                  Show Description
-                </button>
-              )}
-            </div>
-            <h5 className="text-3xl text-center">{projects[2].name}</h5>
-            {showDescription && (
-              <p className="pt-2 text-center">{projects[2].description}</p>
-            )}
-
-            <div className="flex justify-center pt-3">
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
-                    href={projects[2].githubRepo}
-                  >
-                    Github Repo
-                  </a>
+        <div className="relative">
+            <img
+              src={require(`../../assets/img/apps/${2}.jpg`)}
+              className="block rounded-t-lg lg:rounded-lg"
+              alt="pet-fetcher"
+            />
+            <div className="legend lg-carousel">
+                <div className="more-less">
+                  {showDescription ? (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300 text-lg"
+                        onClick={() => toggleShowDescription(false)}
+                      >
+                        show less
+                      </button>
+                  ) : (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
+                        onClick={() => toggleShowDescription(true)}
+                      >
+                        more...
+                      </button>
+                  )}
                 </div>
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
-                    href={projects[2].deployedUrl}
-                  >
-                    Video Demonstration
-                  </a>
+              <h5 className="text-3xl text-center">{projects[2].name}</h5>
+                <p className={`pt-2 text-center text-lg desc-align ${showDescription ? 'block' : 'hidden'}`}>{projects[2].description}</p>
+
+              <div className="flex justify-center pt-3 pl-3 text-lg">
+                <div className="grid grid-cols-2">
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
+                      href={projects[2].githubRepo}
+                    >
+                      Github Repo
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
+                      href={projects[2].deployedUrl}
+                    >
+                      Video Demonstration
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
-        <div>
-          <img
-            src={require(`../../assets/img/apps/${3}.jpg`)}
-            className="block rounded-t-lg lg:rounded-lg"
-            alt="teamhub-generator"
-          />
-
-          <div
-            className={`carousel-caption hidden lg:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${
-              !showDescription && "opacity-0 hover:opacity-80"
-            } transition-all ease-in-out duration-300 px-3 rounded`}
-          >
-            <div className="flex justify-end pr-4">
-              {showDescription ? (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(false)}
-                >
-                  Hide Description
-                </button>
-              ) : (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(true)}
-                >
-                  Show Description
-                </button>
-              )}
-            </div>
-            <h5 className="text-3xl text-center">{projects[3].name}</h5>
-            {showDescription && (
-              <p className="pt-2 text-center">{projects[3].description}</p>
-            )}
-
-            <div className="flex justify-center pt-3">
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
-                    href={projects[3].githubRepo}
-                  >
-                    Github Repo
-                  </a>
+        <div className="relative">
+            <img
+              src={require(`../../assets/img/apps/${3}.jpg`)}
+              className="block rounded-t-lg lg:rounded-lg"
+              alt="pet-fetcher"
+            />
+            <div className="legend lg-carousel">
+                <div className="more-less">
+                  {showDescription ? (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300 text-lg"
+                        onClick={() => toggleShowDescription(false)}
+                      >
+                        show less
+                      </button>
+                  ) : (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
+                        onClick={() => toggleShowDescription(true)}
+                      >
+                        more...
+                      </button>
+                  )}
                 </div>
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
-                    href={projects[3].deployedUrl}
-                  >
-                    Video Demonstration
-                  </a>
+              <h5 className="text-3xl text-center">{projects[3].name}</h5>
+                <p className={`pt-2 text-center text-lg desc-align ${showDescription ? 'block' : 'hidden'}`}>{projects[3].description}</p>
+
+              <div className="flex justify-center pt-3 pl-3 text-lg">
+                <div className="grid grid-cols-2">
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
+                      href={projects[3].githubRepo}
+                    >
+                      Github Repo
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
+                      href={projects[3].deployedUrl}
+                    >
+                      Video Demonstration
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
-        <div>
-          <img
-            src={require(`../../assets/img/apps/${4}.jpg`)}
-            className="block rounded-t-lg lg:rounded-lg"
-            alt="coinhiz"
-          />
-
-          <div
-            className={`carousel-caption hidden lg:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${
-              !showDescription && "opacity-0 hover:opacity-80"
-            } transition-all ease-in-out duration-300 px-3 rounded`}
-          >
-            <div className="flex justify-end pr-4">
-              {showDescription ? (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(false)}
-                >
-                  Hide Description
-                </button>
-              ) : (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(true)}
-                >
-                  Show Description
-                </button>
-              )}
-            </div>
-            <h5 className="text-3xl text-center">{projects[4].name}</h5>
-            {showDescription && (
-              <p className="pt-2 text-center">{projects[4].description}</p>
-            )}
-
-            <div className="flex justify-center pt-3">
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
-                    href={projects[4].githubRepo}
-                  >
-                    Github Repo
-                  </a>
+        <div className="relative">
+            <img
+              src={require(`../../assets/img/apps/${4}.jpg`)}
+              className="block rounded-t-lg lg:rounded-lg"
+              alt="pet-fetcher"
+            />
+            <div className="legend lg-carousel">
+                <div className="more-less">
+                  {showDescription ? (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300 text-lg"
+                        onClick={() => toggleShowDescription(false)}
+                      >
+                        show less
+                      </button>
+                  ) : (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
+                        onClick={() => toggleShowDescription(true)}
+                      >
+                        more...
+                      </button>
+                  )}
                 </div>
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
-                    href={projects[4].deployedUrl}
-                  >
-                    Try it for yourself!
-                  </a>
+              <h5 className="text-3xl text-center">{projects[4].name}</h5>
+                <p className={`pt-2 text-center text-lg desc-align ${showDescription ? 'block' : 'hidden'}`}>{projects[4].description}</p>
+
+              <div className="flex justify-center pt-3 pl-3 text-lg">
+                <div className="grid grid-cols-2">
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
+                      href={projects[4].githubRepo}
+                    >
+                      Github Repo
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
+                      href={projects[4].deployedUrl}
+                    >
+                      Try it for yourself!
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
 
-        <div>
-          <img
-            src={require(`../../assets/img/apps/${5}.jpg`)}
-            className="block rounded-t-lg lg:rounded-lg"
-            alt="code-quiz"
-          />
-
-          <div
-            className={`carousel-caption hidden lg:block absolute bg-slate-900 bg-opacity-70 hover:bg-opacity-95 ${
-              !showDescription && "opacity-0 hover:opacity-80"
-            } transition-all ease-in-out duration-300 px-3 rounded`}
-          >
-            <div className="flex justify-end pr-4">
-              {showDescription ? (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(false)}
-                >
-                  Hide Description
-                </button>
-              ) : (
-                <button
-                  className="hover:text-sky-200 transition-all ease-in-out duration-300"
-                  onClick={() => toggleShowDescription(true)}
-                >
-                  Show Description
-                </button>
-              )}
-            </div>
-            <h5 className="text-3xl text-center">{projects[5].name}</h5>
-            {showDescription && (
-              <p className="pt-2 text-center">{projects[5].description}</p>
-            )}
-
-            <div className="flex justify-center pt-3">
-              <div className="grid grid-cols-2">
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
-                    href={projects[5].githubRepo}
-                  >
-                    Github Repo
-                  </a>
+        <div className="relative">
+            <img
+              src={require(`../../assets/img/apps/${5}.jpg`)}
+              className="block rounded-t-lg lg:rounded-lg"
+              alt="pet-fetcher"
+            />
+            <div className="legend lg-carousel">
+                <div className="more-less">
+                  {showDescription ? (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300 text-lg"
+                        onClick={() => toggleShowDescription(false)}
+                      >
+                        show less
+                      </button>
+                  ) : (
+                      <button
+                        className="text-lg text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
+                        onClick={() => toggleShowDescription(true)}
+                      >
+                        more...
+                      </button>
+                  )}
                 </div>
-                <div>
-                  <a
-                    className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
-                    href={projects[5].deployedUrl}
-                  >
-                    Try it for yourself!
-                  </a>
+              <h5 className="text-3xl text-center">{projects[5].name}</h5>
+                <p className={`pt-2 text-center text-lg desc-align ${showDescription ? 'block' : 'hidden'}`}>{projects[5].description}</p>
+
+              <div className="flex justify-center pt-3 pl-3 text-lg">
+                <div className="grid grid-cols-2">
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded  transition-all ease-in-out duration-300"
+                      href={projects[5].githubRepo}
+                    >
+                      Github Repo
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      className="bg-slate-900 hover:bg-sky-50 hover:text-slate-900 py-1 px-2 rounded transition-all ease-in-out duration-300"
+                      href={projects[5].deployedUrl}
+                    >
+                      Try it for yourself!
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </div>
       </Carousel>
   );

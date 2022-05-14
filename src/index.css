@@ -47,6 +47,33 @@ html, body {
   margin-right: -50%;
 }
 
+.lg-carousel {
+  background: #0f172a !important;
+  color: #f0f9ff !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+.more-less {
+  display: flex !important;
+  justify-content: end !important;
+  margin-right: 1rem;
+}
+
+.desc-align {
+  text-align: left !important;
+}
+
+.pf-team {
+  text-align: center !important;
+}
+
+
+@import '~react-responsive-carousel/lib/styles/carousel.min.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.legend {
+  background: #334155
+}
