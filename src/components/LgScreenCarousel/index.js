@@ -132,7 +132,7 @@ function LgScreenCarousel() {
     },
   ]);
 
-  const [showDescription, toggleShowDescription] = useState(false);
+  const [showDescription, toggleShowDescription] = useState(true);
 
   return (
       <Carousel>
