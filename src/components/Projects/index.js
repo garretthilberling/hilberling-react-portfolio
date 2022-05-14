@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { SlideFade } from "@chakra-ui/react";
@@ -88,8 +88,6 @@ function Projects({ name }) {
       index: 5,
     },
   ]);
-  
-  
 
   return (
       <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
@@ -97,17 +95,18 @@ function Projects({ name }) {
           <div className="lg:hidden block flex justify-center text-lg text-sky-400 mb-3">
             <p className="animate-swipe-me"><i className="fa-solid fa-arrow-left pr-3"></i><span className="text-sky-200">Swipe</span><i className="fa-solid fa-arrow-right pl-3"></i></p>
           </div>
-
-          <LgScreenCarousel />
+          <div className="lg:block md:hidden sm:hidden">
+            <LgScreenCarousel />
+          </div>
 
           {/* scrollable carousel, small-medium screens */}
-            <ul className="lg:hidden flex overflow-scroll scroll-smooth gap-1 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 before:w-[10vw] after:shrink-0 after:w-[10vw] no-scrollbar shadow-lg">
+            <ul className="lg:hidden block flex overflow-scroll scroll-smooth gap-1 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 before:w-[10vw] after:shrink-0 after:w-[10vw] no-scrollbar shadow-lg">
                 {projects.map((project, index) => (
                     <li className="shrink-0 snap-center lg:w-auto w-full h-full" key={`project-card-${index}`}>
                         <div className="relative">
                             <img
                                 src={require(`../../assets/img/apps/${index}.jpg`)}
-                                className="md:block hidden rounded-t-lg lg:rounded-lg"
+                                className="block rounded-t-lg lg:rounded-lg"
                                 alt={project.name}
                             />
 
