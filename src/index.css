@@ -57,7 +57,8 @@ html, body {
 .more-less {
   display: flex !important;
   justify-content: end !important;
-  margin-right: 1rem;
+  padding-right: .2rem;
+  padding-top: .5rem;
 }
 
 .desc-align {
