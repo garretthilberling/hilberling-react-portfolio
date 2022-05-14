@@ -129,16 +129,16 @@ function Projects({ name }) {
                                 </div>
                               {smShowDescription && <p className="text-lg transition-all ease-in-out duration-300">{project.description}</p>}
                               <div className="flex justify-center pt-6">
-                                <div className="grid grid-cols-2 gap-10">
+                                <div className="grid grid-cols-2 md:gap-10 gap-2">
                                   <div>
-                                    <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.githubRepo}>Github Repo</a>
+                                    <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 md:text-lg text-md rounded transition-all ease-in-out duration-300" href={project.githubRepo}>Github</a>
                                   </div>
                                   <div>
                                     {
                                       index !== 1 && index !== 2 && index !== 3 ? (
-                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Try it out!</a>
+                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 md:text-lg text-md rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Demo</a>
                                       ) : (
-                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 text-lg rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Video Demo</a>
+                                          <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 md:text-lg text-md rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Tutorial</a>
                                       )
                                     }
                                   </div>
