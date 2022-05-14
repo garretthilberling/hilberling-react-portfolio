@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hilberling-react-portfolio/static/css/main.c4ca90ca.css",
-    "main.js": "/hilberling-react-portfolio/static/js/main.bc997f85.js",
+    "main.css": "/hilberling-react-portfolio/static/css/main.e304c6c9.css",
+    "main.js": "/hilberling-react-portfolio/static/js/main.2406f720.js",
     "static/js/787.b835eae4.chunk.js": "/hilberling-react-portfolio/static/js/787.b835eae4.chunk.js",
     "static/media/profile-pic.png": "/hilberling-react-portfolio/static/media/profile-pic.a616b19daa9b89505283.png",
     "static/media/2.jpg": "/hilberling-react-portfolio/static/media/2.7bdbbffa55514eec8004.jpg",
@@ -12,12 +12,12 @@
     "static/media/5.jpg": "/hilberling-react-portfolio/static/media/5.7b4edbc3bc8cac67a447.jpg",
     "static/media/resume.pdf": "/hilberling-react-portfolio/static/media/resume.e97c64df5400ca3fe01c.pdf",
     "index.html": "/hilberling-react-portfolio/index.html",
-    "main.c4ca90ca.css.map": "/hilberling-react-portfolio/static/css/main.c4ca90ca.css.map",
-    "main.bc997f85.js.map": "/hilberling-react-portfolio/static/js/main.bc997f85.js.map",
+    "main.e304c6c9.css.map": "/hilberling-react-portfolio/static/css/main.e304c6c9.css.map",
+    "main.2406f720.js.map": "/hilberling-react-portfolio/static/js/main.2406f720.js.map",
     "787.b835eae4.chunk.js.map": "/hilberling-react-portfolio/static/js/787.b835eae4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c4ca90ca.css",
-    "static/js/main.bc997f85.js"
+    "static/css/main.e304c6c9.css",
+    "static/js/main.2406f720.js"
   ]
 }
