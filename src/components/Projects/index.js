@@ -2,8 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { SlideFade } from "@chakra-ui/react";
-import { useLocation } from "react-router-dom";
-
 
 function Projects({ name }) {
   const paw = (
@@ -12,13 +10,13 @@ function Projects({ name }) {
       className="px-1 text-violet-400"
     ></FontAwesomeIcon>
   );
+  let carousel = useRef(null);
   const maxScrollWidth = useRef(0);
   const [currentIndex, setCurrentIndex] = useState(0);
-  let carousel = useRef(null);
+  const [carouselRef, setCarouselRef] = useState(0);
   const [showDescription, toggleShowDescription] = useState(true)
   const [smShowDescription, toggleSmShowDescription] = useState(false)
 
-  const [changeUrl, setChangeUrl] = useState(0);
   const [projects] = useState([
     {
       name: <>Pet{paw}Fetcher</>,
@@ -95,11 +93,11 @@ function Projects({ name }) {
 
   const moveNext = () => {
       console.log(currentIndex + 1);
+      console.log(carouselRef)
     if (
       carousel.current !== null &&
       carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
     ) {
-      console.log(carousel);
       setCurrentIndex((prevState) => prevState + 1);
     }
   };
@@ -117,7 +115,6 @@ function Projects({ name }) {
     }
 
     if (direction === "next" && carousel.current !== null) {
-      console.log(carousel);
       return (
         carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
       );
@@ -126,16 +123,19 @@ function Projects({ name }) {
     return false;
   };
 
-  useEffect(() => {
-    JSON.stringify(changeUrl);
-    console.log(JSON.stringify(changeUrl));
-    console.log()
-  }, [changeUrl]);
+  // useEffect(() => {
+  //   JSON.stringify(changeUrl);
+  //   console.log(JSON.stringify(changeUrl));
+  //   console.log()
+  // }, [changeUrl]);
 
   useEffect(() => {
     if (carousel !== null && carousel.current !== null) {
-      console.log(carousel);
+      console.log(maxScrollWidth, carousel.current.scrollLeft);
+
       carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex;
+
+      console.log(maxScrollWidth, carousel.current.scrollLeft);
     }
   }, [currentIndex]);
 
@@ -145,16 +145,20 @@ function Projects({ name }) {
       : 0;
   }, []);
 
+  // useEffect(() => {
+  //   setCarouselRef(carousel);
+  // }, [carousel.current])
+
   
   
 
   return (
       <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
-        <section className="no-scrollbar 2xl:container 2xl:mx-auto 2xl:px-0 py-3 px-10" onLoad={() => setChangeUrl(window.location.pathname)}>
+        <section className="no-scrollbar 2xl:container 2xl:mx-auto 2xl:px-0 py-3 px-10">
           <div className="lg:hidden block flex justify-center text-lg text-sky-400 mb-3">
             <p className="animate-swipe-me"><i className="fa-solid fa-arrow-left pr-3"></i><span className="text-sky-200">Swipe</span><i className="fa-solid fa-arrow-right pl-3"></i></p>
           </div>
-            <ul ref={carousel} className="flex overflow-scroll scroll-smooth lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 lg:after:w-[30vw] md:after:w-[15vw] after:w-[10vw] no-scrollbar shadow-lg">
+            <ul ref={carousel} id="carousel-container" className="flex overflow-scroll scroll-smooth lg:gap-6 md:gap-3 gap-1 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 lg:before:w-[30vw] md:before:w-[15vw] before:w-[10vw] after:shrink-0 lg:after:w-[30vw] md:after:w-[15vw] after:w-[10vw] no-scrollbar shadow-lg">
                 {projects.map((project, index) => (
                     <li className="shrink-0 snap-center lg:w-auto w-full h-full" key={`project-card-${index}`}>
                         <div className="relative">
@@ -286,20 +290,20 @@ function Projects({ name }) {
             <nav className="flex justify-center py-5">
                 <ul className="grid grid-cols-2">
                     {projects.map((project, index) => (
-                      <>
-                        <li key={`small-desc-${index}`} className="block lg:hidden">
+                      <div key={`nav-container-${index}`}>
+                        <li className="block lg:hidden">
                           <div className="bg-slate-200">
 
                           </div>
                         </li>
 
-                        <li key={`snap-to-${index}`}>
+                        <li>
                             <a 
                                 href={`#carousel-item-${index}`} 
                                 className=" transition-all scroll-smooth duration-300 hidden lg:block hover:text-sky-200"
                             >{project.name}</a>
                         </li>
-                      </>
+                      </div>
                     ))}
                 </ul>
             </nav>

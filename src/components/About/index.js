@@ -63,8 +63,8 @@ function About({ aboutSelected }) {
                 </SlideFade>
                 <ul className="lg:pl-0 lg:pr-10 px-5 bg-transparent">
                 {aboutListItems.map((listItem, index) => (
-                    <SlideFade in={aboutSelected} offsetX={0} offsetY={listItem.transition}>
-                            <li key={`about-me-${index}`} className="py-6 pr-3 flex bg-transparent">
+                    <SlideFade key={`about-me-${index}`} in={aboutSelected} offsetX={0} offsetY={listItem.transition}>
+                            <li className="py-6 pr-3 flex bg-transparent">
                                 <div className="flex flex-col justify-center pr-6 text-3xl text-blue-300 bg-transparent">
                                     <FontAwesomeIcon icon={listItem.icon}></FontAwesomeIcon>
                                 </div>
