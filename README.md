@@ -14,7 +14,7 @@ A SPA portfolio showing off the projects I have completed as a part of the UCF B
 Click through the sections in the Nav bar to get to know me and my work! I am currently seeking employment in Seattle, Washington so if you enjoy my work please contact me at garrettdrewhilberling@gmail.com and/or connect with me on [LinkedIn](https://www.linkedin.com/in/garretthilberling/).
 
 <p align="center">
-    <img src="./public/assets/img/gif-demonstration-4.gif" width="700" />
+    <img src="./public/assets/img/gif-demonstration-5.gif" width="700" />
 </p>
     
 ## Installation
