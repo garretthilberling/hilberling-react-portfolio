@@ -90,7 +90,7 @@ function Projects({ name }) {
 
   return (
       <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
-        <section className="no-scrollbar 2xl:container 2xl:mx-auto 2xl:px-0 py-3 lg:px-10 md:px-5 px-0">
+        <section className="no-scrollbar 2xl:container 2xl:mx-auto 2xl:px-0 py-3 lg:px-10 md:px-5 px-1">
           <div className="lg:hidden block flex justify-center text-lg text-sky-400 mb-3">
             <p className="animate-swipe-me"><i className="fa-solid fa-arrow-left pr-3"></i><span className="text-sky-200">Swipe</span><i className="fa-solid fa-arrow-right pl-3"></i></p>
           </div>
