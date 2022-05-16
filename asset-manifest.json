@@ -1,23 +1,29 @@
 {
   "files": {
-    "main.css": "/hilberling-react-portfolio/static/css/main.43d968aa.css",
-    "main.js": "/hilberling-react-portfolio/static/js/main.95301550.js",
+    "main.css": "/hilberling-react-portfolio/static/css/main.c067ce93.css",
+    "main.js": "/hilberling-react-portfolio/static/js/main.73bd6ff1.js",
     "static/js/787.b835eae4.chunk.js": "/hilberling-react-portfolio/static/js/787.b835eae4.chunk.js",
     "static/media/profile-pic.png": "/hilberling-react-portfolio/static/media/profile-pic.a616b19daa9b89505283.png",
+    "static/media/0.PNG": "/hilberling-react-portfolio/static/media/0.39e888038a4d9fd01925.PNG",
+    "static/media/1.PNG": "/hilberling-react-portfolio/static/media/1.554a3139ba9e0796acd0.PNG",
+    "static/media/5.PNG": "/hilberling-react-portfolio/static/media/5.111adaeca3f7f842175a.PNG",
+    "static/media/2.PNG": "/hilberling-react-portfolio/static/media/2.050b4bc759fc2ff63fec.PNG",
     "static/media/2.jpg": "/hilberling-react-portfolio/static/media/2.7bdbbffa55514eec8004.jpg",
     "static/media/0.jpg": "/hilberling-react-portfolio/static/media/0.3d26305c41a6d080fd93.jpg",
     "static/media/3.jpg": "/hilberling-react-portfolio/static/media/3.22c0ed16f7bc6f6e14f4.jpg",
+    "static/media/3.PNG": "/hilberling-react-portfolio/static/media/3.d6d45c05d110e4b95ee8.PNG",
     "static/media/1.jpg": "/hilberling-react-portfolio/static/media/1.81a1bebc79bb1f8698b0.jpg",
     "static/media/4.jpg": "/hilberling-react-portfolio/static/media/4.60970317071bdc342633.jpg",
+    "static/media/4.PNG": "/hilberling-react-portfolio/static/media/4.dea62008d6dde1f40ffc.PNG",
     "static/media/5.jpg": "/hilberling-react-portfolio/static/media/5.7b4edbc3bc8cac67a447.jpg",
     "static/media/resume.pdf": "/hilberling-react-portfolio/static/media/resume.e97c64df5400ca3fe01c.pdf",
     "index.html": "/hilberling-react-portfolio/index.html",
-    "main.43d968aa.css.map": "/hilberling-react-portfolio/static/css/main.43d968aa.css.map",
-    "main.95301550.js.map": "/hilberling-react-portfolio/static/js/main.95301550.js.map",
+    "main.c067ce93.css.map": "/hilberling-react-portfolio/static/css/main.c067ce93.css.map",
+    "main.73bd6ff1.js.map": "/hilberling-react-portfolio/static/js/main.73bd6ff1.js.map",
     "787.b835eae4.chunk.js.map": "/hilberling-react-portfolio/static/js/787.b835eae4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.43d968aa.css",
-    "static/js/main.95301550.js"
+    "static/css/main.c067ce93.css",
+    "static/js/main.73bd6ff1.js"
   ]
 }
