@@ -90,7 +90,7 @@ function Projects({ name }) {
 
   return (
       <SlideFade in={name === 'projects'} offsetX={50} offsetY={0}>
-        <section className="no-scrollbar 2xl:container 2xl:mx-auto 2xl:px-0 py-3 px-10">
+        <section className="no-scrollbar 2xl:container 2xl:mx-auto 2xl:px-0 py-3 lg:px-10 md:px-5 px-0">
           <div className="lg:hidden block flex justify-center text-lg text-sky-400 mb-3">
             <p className="animate-swipe-me"><i className="fa-solid fa-arrow-left pr-3"></i><span className="text-sky-200">Swipe</span><i className="fa-solid fa-arrow-right pl-3"></i></p>
           </div>
@@ -118,7 +118,7 @@ function Projects({ name }) {
                             <div className="px-6 py-4 rounded-b-lg block lg:hidden bg-gradient-to-b from-slate-700 to-slate-600">
                               <div className={`font-bold mb-2 flex justify-between`}>
                                 <h3 className="text-xl">{project.name}</h3>
-                                <div className="text-lg">
+                                <div className="pl-1 text-lg">
                                     {smShowDescription ?
                                         <button 
                                             className="text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
