@@ -99,7 +99,7 @@ function Projects({ name }) {
           </span>
 
           {/* scrollable carousel, small-medium screens */}
-            <ul className="lg:hidden block flex overflow-scroll scroll-smooth gap-1 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 before:w-[10vw] after:shrink-0 after:w-[10vw] no-scrollbar shadow-lg">
+            <ul className="lg:hidden block flex overflow-scroll scroll-smooth gap-3 snap-x snap-mandatory touch-pan-x z-0 before:shrink-0 before:w-[10vw] after:shrink-0 after:w-[10vw] no-scrollbar shadow-lg">
                 {projects.map((project, index) => (
                     <li className="shrink-0 snap-center w-full h-full" key={`project-card-${index}`}>
                         <div className="relative">
