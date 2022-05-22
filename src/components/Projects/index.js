@@ -12,7 +12,7 @@ function Projects({ name }) {
     ></FontAwesomeIcon>
   );
 
-  const [smShowDescription, toggleSmShowDescription] = useState(false)
+  const [smShowDescription, toggleSmShowDescription] = useState(null)
 
   const [projects] = useState([
     {
@@ -119,20 +119,20 @@ function Projects({ name }) {
                               <div className={`font-bold mb-2 flex justify-between`}>
                                 <h3 className="text-xl">{project.name}</h3>
                                 <div className="pl-1 text-lg">
-                                    {smShowDescription ?
+                                    {smShowDescription === index ?
                                         <button 
                                             className="text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
-                                            onClick={() => toggleSmShowDescription(false)}
+                                            onClick={() => toggleSmShowDescription(null)}
                                         >Less</button>
                                     :
                                         <button 
                                             className="text-sky-400 hover:text-sky-500 transition-all ease-in-out duration-300"
-                                            onClick={() => toggleSmShowDescription(true)}
+                                            onClick={() => toggleSmShowDescription(index)}
                                         >More...</button>
                                     }
                                     </div>
                                 </div>
-                              {smShowDescription && <p className="text-lg transition-all ease-in-out duration-300">{project.description}</p>}
+                              {smShowDescription === index && <p className="text-lg transition-all ease-in-out duration-300">{project.description}</p>}
                               <div className="flex justify-center pt-6">
                                 <div className="grid grid-cols-2 md:gap-10 gap-2">
                                   <div>

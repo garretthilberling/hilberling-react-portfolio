@@ -12,7 +12,7 @@ function Resume({ name }) {
                             src={`${resume}`} 
                             alt="My resume" 
                             height="500" 
-                            width="60%" 
+                            className="md:w-8/12 w-full"
                             scrolling="auto"
                             type="application/pdf"
                         />
