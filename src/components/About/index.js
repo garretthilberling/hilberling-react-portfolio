@@ -35,7 +35,7 @@ function About({ aboutSelected }) {
             icon: faCalendarTimes,
             point: 
             <>
-              I <span className="text-sky-300 font-semibold">love</span> learning about new languages and technologies. After I am finished with my bootcamp I intend to learn <span className="text-sky-300 font-semibold">C++</span>, <span className="text-sky-300 font-semibold">C#</span>, and <span className="text-sky-300 font-semibold">the .NET framwork</span>.
+              I <span className="text-sky-300 font-semibold">love</span> learning about new languages and technologies. After I am finished with my bootcamp I intend to learn <span className="text-sky-300 font-semibold">Java</span>, <span className="text-sky-300 font-semibold">C++</span>, <span className="text-sky-300 font-semibold">C#</span>, and <span className="text-sky-300 font-semibold">the .NET framwork</span>.
             </>,
             transition: -80
         },
