@@ -16,6 +16,18 @@ function Projects({ name }) {
 
   const [projects] = useState([
     {
+      name: <>Plan🌎It</>,
+      description: (
+        <>
+          Built as a team, assumed a <span className="text-sky-300 font-semibold">leadership role</span>.
+          <br></br>
+          Plan🌎it is a user friendly organization application where you can add/update/delete goals and tasks. The idea is to take someone who may be <span className="text-sky-300 font-semibold">scatterbrained</span> and <span className="text-sky-300 font-semibold">get them organized</span>. Users can input as many ideas, goals, and tasks they would like to accomplish, specify a category, and then Plan🌎it does the hard part for them: completely organizes everything in an <span className="text-sky-300 font-semibold">easy to understand</span>, <span className="text-sky-300 font-semibold">easy to manage</span> way. I was full stack on this project, helping build out the backend with GraphQL and handling all frontend queries and mutations. I also assisted with styling. This project is still in development!
+        </>
+      ),
+      githubRepo: "https://github.com/garretthilberling/Plan-It-Organizer",
+      deployedUrl: "https://plan-it-organizer.herokuapp.com/",
+    },
+    {
       name: <>Pet{paw}Fetcher</>,
       description: (
         <>
@@ -26,7 +38,6 @@ function Projects({ name }) {
       ),
       githubRepo: "https://github.com/garretthilberling/pet-fetcher",
       deployedUrl: "https://pet-fetcher.herokuapp.com/",
-      index: 0,
     },
     {
       name: <>Social🧑‍🤝‍🧑Network🤖API</>,
@@ -39,7 +50,6 @@ function Projects({ name }) {
       githubRepo: "https://github.com/garretthilberling/social-network-api",
       deployedUrl:
         "https://drive.google.com/file/d/1_83qfodI__a5Vg0wvUlAc6PvUfXCkdk4/view",
-      index: 1,
     },
     {
       name: <>Employee-Tracker</>,
@@ -51,7 +61,6 @@ function Projects({ name }) {
       githubRepo: "https://github.com/garretthilberling/employee-tracker",
       deployedUrl:
         "https://drive.google.com/file/d/1YioDuPf3SD0VFJLZ1V6n_pK2-ZYGpj6u/view",
-      index: 2,
     },
     {
       name: <>TeamHub-Generator</>,
@@ -62,7 +71,6 @@ function Projects({ name }) {
       ),
       githubRepo: "https://github.com/garretthilberling/teamhub-generator",
       deployedUrl: "https://garretthilberling.github.io/teamhub-generator/",
-      index: 3,
     },
     {
       name: <>CoinHiz</>,
@@ -73,7 +81,6 @@ function Projects({ name }) {
       ),
       githubRepo: "https://github.com/garretthilberling/coinhiz/",
       deployedUrl: "https://garretthilberling.github.io/coinhiz/",
-      index: 4,
     },
     {
       name: <>codeQuiz</>,
@@ -84,7 +91,6 @@ function Projects({ name }) {
       ),
       githubRepo: "https://github.com/garretthilberling/codeQuiz",
       deployedUrl: "https://garretthilberling.github.io/codeQuiz/",
-      index: 5,
     },
   ]);
 
