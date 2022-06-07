@@ -21,7 +21,7 @@ function LgScreenCarousel() {
         </>
       ),
       githubRepo: "https://github.com/garretthilberling/Plan-It-Organizer",
-      deployedUrl: "https://plan-it-organizer.herokuapp.com/",
+      deployedUrl: "https://plan-it-hilberling.herokuapp.com/",
     },
     {
       name: <>Pet{paw}Fetcher</>,
