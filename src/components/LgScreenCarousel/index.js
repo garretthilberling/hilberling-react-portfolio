@@ -12,18 +12,6 @@ function LgScreenCarousel() {
   );
   const [projects] = useState([
     {
-      name: <>Plan🌎It</>,
-      description: (
-        <>
-          Built as a team, assumed a <span className="text-sky-300 font-semibold">leadership role</span>.
-          <br></br>
-          Plan🌎it is a user friendly organization application where you can add/update/delete goals and tasks. The idea is to take someone who may be <span className="text-sky-300 font-semibold">scatterbrained</span> and <span className="text-sky-300 font-semibold">get them organized</span>. Users can input as many ideas, goals, and tasks they would like to accomplish, specify a category, and then Plan🌎it does the hard part for them: completely organizes everything in an <span className="text-sky-300 font-semibold">easy to understand</span>, <span className="text-sky-300 font-semibold">easy to manage</span> way. I was full stack on this project, helping build out the backend with GraphQL and handling all frontend queries and mutations. I also assisted with styling. This project is still in development!
-        </>
-      ),
-      githubRepo: "https://github.com/garretthilberling/Plan-It-Organizer",
-      deployedUrl: "https://plan-it-hilberling.herokuapp.com/",
-    },
-    {
       name: <>Pet{paw}Fetcher</>,
       description: (
         <>
@@ -34,6 +22,18 @@ function LgScreenCarousel() {
       ),
       githubRepo: "https://github.com/garretthilberling/pet-fetcher",
       deployedUrl: "https://pet-fetcher.herokuapp.com/",
+    },
+    {
+      name: <>Plan🌎It</>,
+      description: (
+        <>
+          Built as a team, assumed a <span className="text-sky-300 font-semibold">leadership role</span>.
+          <br></br>
+          Plan🌎it is a user friendly organization application where you can add/update/delete goals and tasks. The idea is to take someone who may be <span className="text-sky-300 font-semibold">scatterbrained</span> and <span className="text-sky-300 font-semibold">get them organized</span>. Users can input as many ideas, goals, and tasks they would like to accomplish, specify a category, and then Plan🌎it does the hard part for them: completely organizes everything in an <span className="text-sky-300 font-semibold">easy to understand</span>, <span className="text-sky-300 font-semibold">easy to manage</span> way. I was full stack on this project, helping build out the backend with GraphQL and handling all frontend queries and mutations. I also assisted with styling. This project is still in development!
+        </>
+      ),
+      githubRepo: "https://github.com/garretthilberling/Plan-It-Organizer",
+      deployedUrl: "https://plan-it-hilberling.herokuapp.com/",
     },
     {
       name: <>Social🧑‍🤝‍🧑Network🤖API</>,
