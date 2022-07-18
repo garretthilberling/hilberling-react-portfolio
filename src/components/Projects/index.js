@@ -14,7 +14,19 @@ function Projects({ name }) {
 
   const [smShowDescription, toggleSmShowDescription] = useState(null)
 
-  const [projects] = useState([
+    const [projects] = useState([
+    {
+        name: <>Pet{paw}Fetcher</>,
+        description: (
+            <>
+                Built as a team, assumed a <span className="text-sky-300 font-semibold">leadership role</span>.
+                <br></br>
+                Pet{paw}Fetcher is an application where users can list their puppies for adoption or connect with other users to adopt a pet of their own. Users can like and comment on posts and can list their pet, including <span className="text-sky-300 font-semibold">uploading an image file</span>. This is done by converting the image into a <span className="text-sky-300 font-semibold">data url</span> and storing it in the database as a <span className="text-sky-300 font-semibold">string</span> (one of my contributions).
+            </>
+        ),
+        githubRepo: "https://github.com/garretthilberling/pet-fetcher",
+        deployedUrl: "https://pet-fetcher.herokuapp.com/",
+    },
       {
           name: <>AWS-Thought</>,
           description: (
@@ -64,18 +76,6 @@ function Projects({ name }) {
           ),
           githubRepo: "https://github.com/garretthilberling/tech-news-java-api",
           deployedUrl: "https://java-tech-news-hilberling.herokuapp.com/",
-      },
-      {
-          name: <>Pet{paw}Fetcher</>,
-          description: (
-              <>
-                  Built as a team, assumed a <span className="text-sky-300 font-semibold">leadership role</span>.
-                  <br></br>
-                  Pet{paw}Fetcher is an application where users can list their puppies for adoption or connect with other users to adopt a pet of their own. Users can like and comment on posts and can list their pet, including <span className="text-sky-300 font-semibold">uploading an image file</span>. This is done by converting the image into a <span className="text-sky-300 font-semibold">data url</span> and storing it in the database as a <span className="text-sky-300 font-semibold">string</span> (one of my contributions).
-              </>
-          ),
-          githubRepo: "https://github.com/garretthilberling/pet-fetcher",
-          deployedUrl: "https://pet-fetcher.herokuapp.com/",
       },
       {
           name: <>Plan🌎It</>,
@@ -196,7 +196,7 @@ function Projects({ name }) {
                                   </div>
                                   <div>
                                     {
-                                      index !== 1 && index !== 2 && index !== 7 && index !== 8 && index !== 9 ? (
+                                      index !== 2 && index !== 3 && index !== 7 && index !== 8 && index !== 9 ? (
                                           <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 md:text-lg text-md rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Demo</a>
                                       ) : (
                                           <a className="bg-sky-50 hover:bg-slate-900 text-slate-900 hover:text-sky-50 py-2 px-3 md:text-lg text-md rounded transition-all ease-in-out duration-300" href={project.deployedUrl}>Tutorial</a>
