@@ -1,0 +1,17 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\assets",
+    "\\src\\assets\\img",
+    "\\src\\assets\\img\\apps",
+    "\\src\\assets\\img\\apps\\small",
+    "\\src\\assets\\img\\resume",
+    "\\src\\components",
+    "\\src\\components\\LgScreenCarousel",
+    "\\src\\components\\Portfolio",
+    "\\src\\components\\Projects"
+  ],
+  "SelectedNode": "\\src\\components\\Projects\\index.js",
+  "PreviewInSolutionExplorer": false
+}
